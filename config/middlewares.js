@@ -6,7 +6,11 @@ module.exports = [
     config: {
       enabled: true,
       header: "*",
-      origin: ["http://localhost:5172", "http://localhost:1337"],
+      origin: [
+        "http://localhost:5172",
+        "http://localhost:1337",
+        "https://barolo.pawaox4th.com",
+      ],
     },
   },
   "strapi::poweredBy",
