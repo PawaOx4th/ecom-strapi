@@ -1,4 +1,5 @@
-'use strict';
+"use strict";
+const { faker } = require("@faker-js/faker");
 
 module.exports = {
   /**
@@ -17,4 +18,13 @@ module.exports = {
    * run jobs, or perform some special logic.
    */
   bootstrap(/*{ strapi }*/) {},
+  // async bootstrap({ strapi }) {
+  //   for (let i = 0; i <= 5; i++) {
+  //     await strapi.entityService.create("api::post.post", {
+  //       data: {
+  //         name: faker.finance.accountName(),
+  //       },
+  //     });
+  //   }
+  // },
 };
