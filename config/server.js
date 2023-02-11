@@ -4,5 +4,5 @@ module.exports = ({ env }) => ({
   app: {
     keys: env.array("APP_KEYS"),
   },
-  url: "https://barolo.pawaox4th.com",
+  // url: "https://barolo.pawaox4th.com",
 });
