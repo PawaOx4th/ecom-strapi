@@ -1,7 +1,16 @@
-module.exports = ({ env }) => ({
-  connection: {
-    client: "postgres",
-    connection: {
+function onCreateSSL(env) {
+  const runOn = env("RUN_ON", "server");
+  if (runOn === "local") {
+    return {
+      host: env("DATABASE_HOST", "127.0.0.1"),
+      port: env.int("DATABASE_PORT", 5432),
+      database: env("DATABASE_NAME", "strapi"),
+      user: env("DATABASE_USERNAME", "strapi"),
+      password: env("DATABASE_PASSWORD", "strapi"),
+      schema: env("DATABASE_SCHEMA", "public"), // Not required
+    };
+  } else {
+    return {
       host: env("DATABASE_HOST", "127.0.0.1"),
       port: env.int("DATABASE_PORT", 5432),
       database: env("DATABASE_NAME", "strapi"),
@@ -12,7 +21,14 @@ module.exports = ({ env }) => ({
         // rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
         ca: env("DATABASE_CA"),
       },
-    },
+    };
+  }
+}
+
+module.exports = ({ env }) => ({
+  connection: {
+    client: "postgres",
+    connection: onCreateSSL(env),
     debug: false,
   },
 });
