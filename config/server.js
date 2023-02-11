@@ -4,5 +4,5 @@ module.exports = ({ env }) => ({
   app: {
     keys: env.array("APP_KEYS"),
   },
-  // url: "https://barolo.pawaox4th.com",
+  url: env("BASE_URL", "http://localhost:1337"),
 });
