@@ -19,10 +19,14 @@ module.exports = {
    */
   bootstrap(/*{ strapi }*/) {},
   // async bootstrap({ strapi }) {
-  //   for (let i = 0; i <= 5; i++) {
-  //     await strapi.entityService.create("api::post.post", {
+  //   for (let i = 0; i <= 20; i++) {
+  //     await strapi.entityService.create("api::product.product", {
   //       data: {
-  //         name: faker.finance.accountName(),
+  //         name: faker.commerce.productName(),
+  //         desc: faker.commerce.productDescription(),
+  //         isNew: faker.datatype.boolean(),
+  //         price: faker.commerce.price(),
+  //         stock: faker.datatype.number({ min: 20, max: 200 }),
   //       },
   //     });
   //   }
