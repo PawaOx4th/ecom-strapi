@@ -25,7 +25,7 @@ module.exports = {
   //         name: faker.commerce.productName(),
   //         desc: faker.commerce.productDescription(),
   //         isNew: faker.datatype.boolean(),
-  //         price: faker.commerce.price(),
+  //         price: faker.commerce.price(5000, 100000, 0),
   //         stock: faker.datatype.number({ min: 20, max: 200 }),
   //       },
   //     });
