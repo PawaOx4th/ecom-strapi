@@ -48,43 +48,34 @@ const bootstrap = (app) => {
               sortable: true,
             },
             cellFormatter: (data) => {
+              const fullname = data?.["createdBy"]?.["firstname"] ?? "";
+              const lastname = data?.["createdBy"]?.["lastname"] ?? "";
               return (
                 <div>
                   <span>
-                    {" "}
-                    `$
-                    {data?.["createdBy"]?.["firstname"] &&
-                      data["createdBy"]["firstname"]}
-                    `
-                  </span>
-                  <span>
-                    {" "}
-                    `$
-                    {data?.["createdBy"]?.["lastname"] &&
-                      data["createdBy"]["lastname"]}
-                    `
+                    {fullname} {lastname}
                   </span>
                 </div>
               );
             },
           },
-          {
-            key: "__update_at_id_key__",
-            name: "update_at",
-            fieldSchema: { type: "string" },
-            metadatas: {
-              label: "custom display updateAt",
-              sortable: true,
-            },
-            cellFormatter: (data) => {
-              return (
-                <div>
-                  {data?.["updateAt"] &&
-                    dayjs(data["updateAt"]).format("DD/MM/YYYY HH:mm:ss")}
-                </div>
-              );
-            },
-          },
+          // {
+          //   key: "__update_at_id_key__",
+          //   name: "update_at",
+          //   fieldSchema: { type: "string" },
+          //   metadatas: {
+          //     label: "custom display updateAt",
+          //     sortable: true,
+          //   },
+          //   cellFormatter: (data) => {
+          //     return (
+          //       <div>
+          //         {data?.["updateAt"] &&
+          //           dayjs(data["updateAt"]).format("DD/MM/YYYY HH:mm:ss")}
+          //       </div>
+          //     );
+          //   },
+          // },
         ],
         layout,
       };
