@@ -22,8 +22,8 @@ function onCreateSSL(env) {
       password: env("DATABASE_PASSWORD", "strapi"),
       schema: env("DATABASE_SCHEMA", "public"), // Not required
       ssl: {
-        // rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
-        ca: env("DATABASE_CA"),
+        rejectUnauthorized: env.bool("DATABASE_SSL_SELF", false), // For self-signed certificates
+        // ca: env("DATABASE_CA"),
       },
     };
   }
