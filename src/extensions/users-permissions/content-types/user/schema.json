@@ -63,19 +63,11 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "profile_image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "address": {
-      "type": "text"
+    "profile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profile.profile",
+      "mappedBy": "user"
     }
   }
 }
