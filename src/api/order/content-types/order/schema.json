@@ -4,14 +4,15 @@
   "info": {
     "singularName": "order",
     "pluralName": "orders",
-    "displayName": "Order"
+    "displayName": "Order",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
-    "strapid": {
+    "stripeId": {
       "type": "text"
     },
     "email": {
@@ -19,6 +20,13 @@
     },
     "products": {
       "type": "json"
+    },
+    "redirect_url": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text"
     }
   }
 }

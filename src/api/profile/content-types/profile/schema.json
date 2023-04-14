@@ -21,12 +21,13 @@
     "address": {
       "type": "text"
     },
-    "image": {
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "uuid": {
       "type": "customField",

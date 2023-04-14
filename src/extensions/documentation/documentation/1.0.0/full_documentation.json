@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-04-14T08:07:26.476Z"
+    "x-generation-date": "2023-04-14T10:55:08.163Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -9629,16 +9629,24 @@
         ],
         "properties": {
           "data": {
-            "required": [],
+            "required": [
+              "redirect_url"
+            ],
             "type": "object",
             "properties": {
-              "strapid": {
+              "stripeId": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
-              "products": {}
+              "products": {},
+              "redirect_url": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              }
             }
           }
         }
@@ -9652,22 +9660,24 @@
           "attributes": {
             "type": "object",
             "properties": {
-              "strapid": {
+              "stripeId": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
               "products": {},
+              "redirect_url": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
               },
               "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -9969,22 +9979,24 @@
           "attributes": {
             "type": "object",
             "properties": {
-              "strapid": {
+              "stripeId": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
               "products": {},
+              "redirect_url": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
               },
               "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -10319,22 +10331,24 @@
           "attributes": {
             "type": "object",
             "properties": {
-              "strapid": {
+              "stripeId": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
               "products": {},
+              "redirect_url": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
               },
               "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -10636,22 +10650,24 @@
           "attributes": {
             "type": "object",
             "properties": {
-              "strapid": {
+              "stripeId": {
                 "type": "string"
               },
               "email": {
                 "type": "string"
               },
               "products": {},
+              "redirect_url": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
               },
               "updatedAt": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "publishedAt": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -20548,7 +20564,7 @@
               "address": {
                 "type": "string"
               },
-              "image": {
+              "avatar": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -21064,7 +21080,7 @@
                                       "address": {
                                         "type": "string"
                                       },
-                                      "image": {
+                                      "avatar": {
                                         "type": "object",
                                         "properties": {
                                           "data": {
@@ -21787,7 +21803,7 @@
               "address": {
                 "type": "string"
               },
-              "image": {
+              "avatar": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -22955,7 +22971,7 @@
                                       "address": {
                                         "type": "string"
                                       },
-                                      "image": {
+                                      "avatar": {
                                         "type": "object",
                                         "properties": {
                                           "data": {
@@ -23678,7 +23694,7 @@
               "address": {
                 "type": "string"
               },
-              "image": {
+              "avatar": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -24879,7 +24895,7 @@
                                       "address": {
                                         "type": "string"
                                       },
-                                      "image": {
+                                      "avatar": {
                                         "type": "object",
                                         "properties": {
                                           "data": {
@@ -25602,7 +25618,7 @@
               "address": {
                 "type": "string"
               },
-              "image": {
+              "avatar": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -26770,7 +26786,7 @@
                                       "address": {
                                         "type": "string"
                                       },
-                                      "image": {
+                                      "avatar": {
                                         "type": "object",
                                         "properties": {
                                           "data": {
@@ -27493,7 +27509,7 @@
               "address": {
                 "type": "string"
               },
-              "image": {
+              "avatar": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -33772,7 +33788,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -35039,7 +35055,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -36339,7 +36355,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -37606,7 +37622,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -38645,7 +38661,7 @@
                                                                   "address": {
                                                                     "type": "string"
                                                                   },
-                                                                  "image": {
+                                                                  "avatar": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {
@@ -39941,7 +39957,7 @@
                                                                   "address": {
                                                                     "type": "string"
                                                                   },
-                                                                  "image": {
+                                                                  "avatar": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {
@@ -41270,7 +41286,7 @@
                                                                   "address": {
                                                                     "type": "string"
                                                                   },
-                                                                  "image": {
+                                                                  "avatar": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {
@@ -42566,7 +42582,7 @@
                                                                   "address": {
                                                                     "type": "string"
                                                                   },
-                                                                  "image": {
+                                                                  "avatar": {
                                                                     "type": "object",
                                                                     "properties": {
                                                                       "data": {
@@ -44248,7 +44264,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -45551,7 +45567,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -46887,7 +46903,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {
@@ -48190,7 +48206,7 @@
                                                     "address": {
                                                       "type": "string"
                                                     },
-                                                    "image": {
+                                                    "avatar": {
                                                       "type": "object",
                                                       "properties": {
                                                         "data": {

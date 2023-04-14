@@ -19,11 +19,13 @@
     "@strapi/provider-email-sendgrid": "^4.9.0",
     "@strapi/provider-upload-cloudinary": "^4.9.0",
     "@strapi/strapi": "4.9.0",
+    "@types/stripe-v3": "^3.1.28",
     "better-sqlite3": "7.4.6",
     "dayjs": "^1.11.7",
     "pg": "^8.9.0",
     "strapi-plugin-populate-deep": "^2.0.0",
-    "strapi-plugin-transformer": "^2.2.0"
+    "strapi-plugin-transformer": "^2.2.0",
+    "stripe": "^12.1.1"
   },
   "author": {
     "name": "A Strapi developer"
