@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "carts",
+  "info": {
+    "singularName": "cart",
+    "pluralName": "carts",
+    "displayName": "Cart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "profile": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::profile.profile"
+    },
+    "products": {
+      "displayName": "cart_item",
+      "type": "component",
+      "repeatable": true,
+      "component": "cart.cart-item"
+    }
+  }
+}
