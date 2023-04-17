@@ -17,18 +17,15 @@ module.exports = {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap({ strapi }) {},
   // async bootstrap({ strapi }) {
-  //   for (let i = 0; i <= 20; i++) {
-  //     await strapi.entityService.create("api::product.product", {
-  //       data: {
-  //         name: faker.commerce.productName(),
-  //         desc: faker.commerce.productDescription(),
-  //         isNew: faker.datatype.boolean(),
-  //         price: faker.commerce.price(5000, 100000, 0),
-  //         stock: faker.datatype.number({ min: 20, max: 200 }),
-  //       },
-  //     });
-  //   }
+  //   strapi.db.lifecycles.subscribe({
+  //     models: ["plugin::users-permissions.user"],
+
+  //     // // your lifecycle hooks
+  //     // async afterCreate() {
+  //     //   console.log("user created!");
+  //     // },
+  //   });
   // },
 };
