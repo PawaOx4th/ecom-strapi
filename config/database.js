@@ -29,10 +29,20 @@ function onCreateSSL(env) {
   }
 }
 
+const connectGCPSql = (env) => {
+  return {
+    host: `/cloudsql/${env("INSTANCE_CONNECTION_NAME")}`,
+    port: env("DATABASE_PORT", 5432),
+    database: env("DATABASE_NAME", "strapi"),
+    user: env("DATABASE_USERNAME", "strapi"),
+    password: env("DATABASE_PASSWORD", "strapi"),
+  };
+};
+
 module.exports = ({ env }) => ({
   connection: {
     client: "postgres",
-    connection: onCreateSSL(env),
+    connection: connectGCPSql(env),
     debug: false,
   },
 });
