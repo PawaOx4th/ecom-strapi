@@ -2,6 +2,7 @@
 const { faker } = require("@faker-js/faker");
 
 console.log("🐳 :", new Date().toISOString());
+console.log("🍟 PORT :", process.env.PORT);
 
 module.exports = {
   /**
