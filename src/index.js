@@ -1,6 +1,8 @@
 "use strict";
 const { faker } = require("@faker-js/faker");
 
+console.log("🐳 :", new Date().toISOString());
+
 module.exports = {
   /**
    * An asynchronous register function that runs before
