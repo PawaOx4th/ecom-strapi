@@ -43,6 +43,16 @@ module.exports = ({ env }) => ({
   connection: {
     client: "postgres",
     connection: connectGCPSql(env),
-    debug: false,
+    debug: true,
+    acquireConnectionTimeout: 1000000,
+    options: {
+      pool: {
+        min: 1,
+        max: 5,
+        acquireTimeoutMillis: 900000,
+        createTimeoutMillis: 900000,
+        destroyTimeoutMillis: 900000,
+      },
+    },
   },
 });
