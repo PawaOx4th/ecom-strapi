@@ -31,11 +31,21 @@ function onCreateSSL(env) {
 
 const connectGCPSql = (env) => {
   return {
-    host: `/cloudsql/${env("INSTANCE_CONNECTION_NAME")}`,
+    connectionString: env("DATABASE_URL"),
+    host: env("DATABASE_HOST", "localhost"),
     port: env("DATABASE_PORT", 5432),
     database: env("DATABASE_NAME", "strapi"),
     user: env("DATABASE_USERNAME", "strapi"),
     password: env("DATABASE_PASSWORD", "strapi"),
+    ssl: env.bool("DATABASE_SSL", false) && {
+      key: env("DATABASE_SSL_KEY", undefined),
+      cert: env("DATABASE_SSL_CERT", undefined),
+      ca: env("DATABASE_SSL_CA", undefined),
+      capath: env("DATABASE_SSL_CAPATH", undefined),
+      cipher: env("DATABASE_SSL_CIPHER", undefined),
+      rejectUnauthorized: env.bool("DATABASE_SSL_REJECT_UNAUTHORIZED", true),
+    },
+    schema: env("DATABASE_SCHEMA", "public"),
   };
 };
 
@@ -44,17 +54,10 @@ module.exports = ({ env }) => ({
     client: "postgres",
     connection: connectGCPSql(env),
     debug: true,
-    acquireConnectionTimeout: 1000000,
     pool: {
-      min: 0,
-      max: 100,
-      acquireTimeoutMillis: 300000,
-      createTimeoutMillis: 300000,
-      destroyTimeoutMillis: 50000,
-      idleTimeoutMillis: 300000,
-      reapIntervalMillis: 10000,
-      createRetryIntervalMillis: 2000,
-      propagateCreateError: false,
+      min: env.int("DATABASE_POOL_MIN", 2),
+      max: env.int("DATABASE_POOL_MAX", 10),
     },
+    acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
   },
 });
